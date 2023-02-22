@@ -55,16 +55,18 @@ The idea of creating a reminder app is for the pure purpose of reminding myself 
 * Users can create multi tasks in `reminderList`.
 * Details of the task list can be checked thru task_no to see the type, date, time and status from `reminderTable` and `reminderStatus` .
 
-## Seed database 
-*For window users only :*
+## Connect MySQL Workbench and Seed database 
+*For Windows users only :*
 
-1. From search bar search for Windows Powershell
-2. Cd into the folder where we stored the sql file.
+1. Open search bar, search for Windows Powershell
+2. Cd into the App's folder where we stored the sql file.
 3. Use "Get-Content users.sql | mysql -u root -p" cmd to run data. 
-4. Enter password that created/stored in Mysql. If there no error, data should be on loading status.
-5. Go to MySQL Workbench and refresh the `Shema` tab on the left. You should see the table pops up. 
-Run    `SELECT * FROM appUsers;` 
+4. Enter password that created/stored in MySQL local host. If there no error, data should be on loading status.
+5. Go to MySQL Workbench, click on the refresh button on the `Shema` tab on the left. You should see the table pops up. 
+6. To check if data is loaded. 
+Run: </br>
+  `SELECT * FROM appUsers;` 
 
     | id  | first_name | last_name |
     | -   | -         | -         |
-If you see the table, you connected to the data.
+If you see the table, you're connected to the data.
