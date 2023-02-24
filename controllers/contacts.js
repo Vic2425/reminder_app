@@ -1,18 +1,17 @@
 const mysql = require('mysql2');
 const pool = require('../mysql/connection');
 const { errors } = require('../mysql/error');
-// const userData = require('../DB/users.sql')
 
-const getAllUsers = (req, res) => {
-    pool.query("SELECT * FROM appusers", (err, rows) => {
+const getAllContacts = (req, res) => {
+    pool.query("SELECT * FROM userscontact", (err, rows) => {
         if (err) return errors(res, err);
         return res.json(rows);
     })
 }
 
-const getUserById = (req, res) => {
+const getContactById = (req, res) => {
     let sql = "SELECT * FROM ?? WHERE ?? = ?";
-    let rep = ['appusers', 'id', req.params.id];
+    let rep = ['userscontact', 'id', req.params.id];
     sql = mysql.format(sql, rep);
 
     pool.query(sql, (err, rows) => {
@@ -22,19 +21,19 @@ const getUserById = (req, res) => {
 
 }
 
-const deleteUserById = (req, res) => {
+const deleteContactById = (req, res) => {
     let sql = "DELETE FROM ?? WHERE ?? = ?";
-    let rep = ['appusers', 'id', req.params.id];
-    sql = mysql.format(sql, rep)
+    let rep = ['userscontact', 'id', req.params.id];
+    sql = mysql.format(sql, rep);
 
     pool.query(sql, (err, rows) => {
-        if (err) return errors(res, err);
-        return res.send('User deleted!')
+        if (err)  return errors(res, err);
+        return res.send("User contact deleted!")
     })
 }
 
 module.exports = {
-    getAllUsers,
-    getUserById,
-    deleteUserById
+    getAllContacts,
+    getContactById,
+    deleteContactById
 }

@@ -1,10 +1,11 @@
 const express = require('express');
-const usersController = require('../controllers/users');
 const router = express.Router();
-// const userData = require('../DB/users.sql')
+const usersController = require('../controllers/users');
 
-router.get('/:id', usersController.getUserById);
-router.get('/', usersController.getAllUsers);
+router.get('/appusers', usersController.getAllUsers);
 
+router.get('/appusers/:id', usersController.getUserById);
+
+router.delete('/appusers/:id', usersController.deleteUserById)
 
 module.exports = router;
