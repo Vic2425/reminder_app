@@ -1,7 +1,7 @@
--- USE myapp;
+USE myapp;
 
 INSERT INTO appusers
-    (id, first_name, last_name)
+    (first_name, last_name)
 VALUES
-    (01, "Jay", "Hunter"),
-    (02, "Bobbi", "Warren");
+    ("Jay", "Hunter"),
+    ("Bobbi", "Warren");
